@@ -15,6 +15,30 @@
   background-color: aqua;
 }
 
+.background{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#sky{
+  opacity: 0;
+  background-image: url(./img/sky.png);
+  z-index: 2;
+}
+
+#water{
+  background-image: url(./img/water.png);
+  z-index: 2;
+}
+
+#dust{
+  background-image: url(./img/dust.png);
+  z-index: 3;
+}
+
 .game::before {
   content: '';
   position: absolute;
@@ -42,6 +66,7 @@
   position: absolute;
   top: -30px;
   right: 0;
+  z-index: 4;
   animation: sun infinite 2000ms linear;
 }
 
@@ -53,6 +78,7 @@
   position: relative;
   top: 125px;
   left: 50px;
+  z-index: 5;
 }
 
 .jump {
@@ -67,7 +93,7 @@
   position: relative;
   top: 55px;
   left: 550px;
-  /* background-color: red; */
+  z-index: 4;
   animation: cactusMov infinite 2000ms linear;
 }
 
