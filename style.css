@@ -99,9 +99,21 @@
   background-image: url(./img/cruiserv.png);
   background-size: 150px 50px;
   bottom: 100px;
-  left: 50%;
+  left: 20%;
   z-index: 5;
-  animation: cruiserMov 5000ms linear;
+  animation: cruiserMov 1000ms linear;
+}
+
+#rocket {
+  position: absolute;
+  width: 70px;
+  height: 20px;
+  background-image: url(./img/rocketv.png);
+  background-size: 70px 20px;
+  bottom: 100px;
+  left: calc(100% + 70px);
+  z-index: 5;
+  /* animation: rocket 15000ms linear; */
 }
 
 
@@ -247,6 +259,20 @@
     left: 100%;
   }
   100% {
-    left: 50%;
+    left: 20%;
+  }
+}
+
+
+
+
+
+@keyframes rocket {
+  0% {
+    bottom: 150px;
+    left: 100%;
+  }
+  100% {
+    left: 30%;
   }
 }

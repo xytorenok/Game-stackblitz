@@ -4,10 +4,11 @@ const stat = document.getElementById('status');
 const life = document.getElementById('life');
 const message = document.getElementById('message');
 const distancePoint = document.getElementById('distance');
+const rocket = document.getElementById('rocket');
 
 let crashes = 0;
 let lives = 5;
-let metres = 0;
+let daysClean = 0;
 
 document.addEventListener('keydown', function (event) {
   jump();
@@ -20,6 +21,12 @@ function jump() {
   setTimeout(function () {
     dino.classList.remove('jump');
   }, 600);
+
+  if (daysClean == 4){
+    // rocket.style.left = '30%'
+    rocket.style.animation = 'rocket 5000ms linear'
+  }
+
 }
 
 let crash = false;
@@ -35,8 +42,8 @@ let isAlive = setInterval(function () {
 //   счетчик пройденного пути
   if (cactusLeft < 50 && cactusLeft > 0 && !start) {
     start = true
-    metres ++;
-    distancePoint.innerHTML = metres;
+    daysClean ++;
+    distancePoint.innerHTML = daysClean;
     // добавляем паузу в 1 секунду, чтобы счетчик не увеличивался слишком быстро
     setTimeout(function () {
       start = false;
@@ -48,7 +55,7 @@ let isAlive = setInterval(function () {
     crashes++;
     stat.innerHTML = crashes;
     lives--;
-    metres--;  
+    daysClean--;  
 
     if (crashes == 4) {
       crashes = -1;
@@ -57,7 +64,7 @@ let isAlive = setInterval(function () {
     // обнуляем пройденное растояние если жизни на нуле 
     if (lives == 0) {
       lives = 5;
-      metres = -1;
+      daysClean = -1;
     }
 
     // добавляем паузу в 1 секунду, чтобы счетчик не увеличивался слишком быстро
@@ -68,3 +75,4 @@ let isAlive = setInterval(function () {
 }, 10);
 
 //  message.hidden = false
+
