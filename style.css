@@ -33,11 +33,11 @@
   right: 0;
 }
 
-#sky{
+/* #sky{
   opacity: 0.5;
-  background-image: url(./img/skyc.png);
+  background-image: url(./img/skyv.png);
   z-index: 2;
-}
+} */
 
 #water{
   background-image: url(./img/water.png);
