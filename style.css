@@ -92,6 +92,20 @@
   animation: meal infinite 1000ms linear, go-away infinite 50000ms linear;
 }
 
+#cruiser {
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  background-image: url(./img/cruiserv.png);
+  background-size: 150px 50px;
+  bottom: 100px;
+  left: 50%;
+  z-index: 5;
+  animation: cruiserMov 5000ms linear;
+}
+
+
+
 #dino {
   width: 70px;
   height: 70px;
@@ -100,7 +114,7 @@
   position: relative;
   top: 125px;
   left: 50px;
-  z-index: 5;
+  z-index: 10;
 }
 
 .jump {
@@ -225,5 +239,14 @@
     left: 0%;
     transform: scaleX(-1);
 
+  }
+}
+
+@keyframes cruiserMov {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 50%;
   }
 }
