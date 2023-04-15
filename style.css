@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.container{
+.container {
   max-width: 600px;
   margin: 0 auto;
 }
@@ -25,7 +25,7 @@
   bottom: 9px;
 }
 
-.background{
+.background {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -33,18 +33,18 @@
   right: 0;
 }
 
-#sky{
+#sky {
   opacity: 0.3;
   background-image: url(./img/skyv.png);
   z-index: 2;
 }
 
-#water{
+#water {
   background-image: url(./img/water.png);
   z-index: 2;
 }
 
-#dust{
+#dust {
   background-image: url(./img/dust.png);
   z-index: 3;
 }
@@ -69,14 +69,27 @@
   animation: sun infinite 20000ms linear;
 }
 
-#birds_right{
+#birds_right {
   position: absolute;
+  z-index: 4;
   width: 30px;
   height: 20px;
   background-image: url(./img/birds-to-right.png);
   background-size: 30px 20px;
   left: -30px;
-  animation: birds-to-right infinite 20000ms linear;
+  animation: birds-to-right infinite 40000ms linear;
+}
+
+#bird {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url(./img/bird.png);
+  background-size: 30px 30px;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  animation: meal infinite 1000ms linear, go-away infinite 50000ms linear;
 }
 
 #dino {
@@ -102,7 +115,7 @@
   position: relative;
   top: 55px;
   left: 550px;
-  z-index: 4;
+  z-index: 5;
   animation: cactusMov infinite 2000ms linear;
 }
 
@@ -138,19 +151,15 @@
     left: 100%;
     top: -50px;
   }
-
   25% {
     top: -30px;
   }
-
   50% {
     top: -40px;
   }
-
   75% {
     top: -30px;
   }
-
   100% {
     left: -60px;
     top: -40px;
@@ -158,20 +167,63 @@
   }
 }
 
-
 @keyframes birds-to-right {
   0% {
     left: -30px;
     top: 0;
   }
-
   50% {
     top: 30px;
-  
   }
-
   100% {
     left: 100%;
     top: 0;
+  }
+}
+
+@keyframes meal {
+  0% {
+    transform: rotate(0deg);
+    bottom: 0;
+  }
+
+  25% {
+    transform: rotate(20deg);
+    bottom: 5px;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    bottom: 0;
+  }
+
+  75% {
+    transform: rotate(20deg);
+    bottom: 3px;
+  }
+
+  100% {
+    transform: rotate(0deg);
+    bottom: 0;
+  }
+}
+
+@keyframes go-away {
+  0% {
+  }
+
+  50% {
+    left: 100%;
+    transform: scaleX(1);
+  }
+
+  60%{
+    transform: scaleX(-1);
+  }
+
+  100% {
+    left: 0%;
+    transform: scaleX(-1);
+
   }
 }
