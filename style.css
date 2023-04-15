@@ -1,0 +1,125 @@
+*{
+  box-sizing: border-box;
+}
+
+.game {
+  width: 600px;
+  height: 200px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  background-color: aqua;
+  }
+
+  .game::before{
+    content: '';
+    position: absolute;
+    height: 1px;
+    background: black;
+    left: 0;
+    right: 0;
+    bottom: 9px;
+  }
+
+#message{
+  position: absolute;
+  background-color: aqua;
+  padding: 5px 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#sun{
+  width: 70px;
+  height: 70px; 
+  background-image: url(./img/sun.png);
+  background-size: 70px 70px;
+  position: absolute;
+  top: -30px;
+  right: 0;
+  animation: sun infinite 2000ms linear;
+}
+
+#dino {
+  width: 70px;
+  height: 70px;
+  background-image: url(./img/drozd.png);
+  background-size: 70px 70px;
+  position: relative; 
+  top: 125px; 
+  left: 50px;
+}
+
+.jump {
+  animation: jump infinite 600ms linear;
+}
+
+#cactus {
+  width: 40px;
+  height: 70px;
+  background-image: url(./img/bong.png);
+  background-size: 40px 70px;
+  position: relative; 
+  top: 55px; 
+  left: 550px;
+  /* background-color: red; */
+  animation: cactusMov infinite 2000ms linear;
+}
+
+@keyframes cactusMov {
+  0% {
+    left: 550px;
+  }
+  100% {
+    left: -40px;
+  }
+}
+
+
+@keyframes jump {
+  0% {
+    top: 125px;
+  }
+  30% {
+    top: 40px;
+  }
+  50% {
+    top: 20px;
+  }
+  80% {
+    top: 90px;
+  }
+  100% {
+    top: 125px;
+  }
+}
+
+
+@keyframes sun {
+  0% {
+    left: 550px;
+    top: -30px;
+    
+  }
+
+  25% {
+    top: 10px;
+  }
+
+  50% {
+    top: 15px;
+    
+  }
+
+  75% {
+    top: 5px;
+    
+  }
+
+  100% {
+    left: -60px;
+    top: -30px;
+    transform: rotate(360deg);
+  }
+}
